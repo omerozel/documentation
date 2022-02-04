@@ -120,6 +120,8 @@ Reference List
      - read or modify cookies
    * - :ref:`effect <frontend/services/effect>`
      - display graphical effects
+   * - :ref:`hotkey <frontend/services/hotkey>`
+     - keyboard shortcuts manager
    * - :ref:`http <frontend/services/http>`
      - perform low level http calls
    * - :ref:`notification <frontend/services/notification>`
@@ -346,6 +348,52 @@ Here, it is called in webclient.js to make it visible everywhere for the example
     :alt: Odoo in sepia
     :width: 600
     :align: center
+
+.. _frontend/services/hotkey:
+
+Hotkey Service
+--------------
+
+Overview
+~~~~~~~~
+
+* Technical name: `hotkey`
+* Dependencies: `ui`
+
+API
+~~~
+
+.. js:function:: add(hotkey, callback[, options])
+  
+    :param string hotkey: the hotkey we would like to get notified for
+    :param function callback: the hotkey we would like to get notified for
+    :param object options: the options of the notification
+    :returns: a function to call to clear the callback from the service
+
+    Adds a callback to be executed when the corresponding hotkey is pressed on the keyboard.
+
+    The options are defined by:
+
+    .. list-table::
+      :widths: 20 15 10 55
+      :header-rows: 1
+
+      * - Name
+        - Type
+        - Default value
+        - Description
+      * - `allowRepeat`
+        - boolean
+        - false
+        - The callback will continue to get called as long as the hotkey is being pressed.
+          Typical usage: arrows and other navigational keys.
+      * - `global`
+        - boolean
+        - false
+        - A global hotkey callback will always get called no matter the UI active element.
+
+Example
+~~~~~~~
 
 .. _frontend/services/http:
 
