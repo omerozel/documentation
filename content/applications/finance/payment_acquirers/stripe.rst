@@ -105,6 +105,32 @@ in your **Hosted endpoints** and insert the following data into the pop-up form:
 When you click on **Add endpoint**, your Webhook is configured. You can then click on **reveal** to
 display your signing secret.
 
+Configuration tab
+-----------------
+
+.. _stripe/place_hold_on_card:
+
+Place a hold on a card
+~~~~~~~~~~~~~~~~~~~~~~
+
+Stripe allows you to **capture an amount manually** instead of having an immediate capture. This
+feature earmarks an amount on the customer's account.
+
+.. warning::
+   Only some payments methods support separate authorization and capture.
+   
+   For example, card payments support separating these steps. The expiration window is 7 days.
+
+   With payment methods that don’t support this functionality, like iDEAL, you can’t separate
+   the authorization and capture steps.
+
+.. caution::
+   Odoo doesn't support the partial capture yet. Be aware that if you make a partial capture from
+   Stripe's interface, Odoo will manage it as if it was a full capture.
+
+.. seealso::
+   - :doc:`../payment_acquirers`
+
 .. _stripe/local-payment-methods:
 
 Enable local payment methods
