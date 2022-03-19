@@ -102,7 +102,7 @@ Option 2: One journal entry only
 Configuration
 -------------
 
-These is nothing to configure if you plan to manage your checks using
+There is nothing to configure if you plan to manage your checks using
 this method.
 
 From check payments to bank statements
